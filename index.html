@@ -15,7 +15,6 @@
     <div class="sd-wrap">
       <header>
         <h1>What challenges are you trying to solve today?</h1>
-        <p class="sd-lead">Who are you and what do you want to do?</p>
       </header>
 
       <section class="sd-container" aria-labelledby="sd-formTitle">
@@ -25,6 +24,7 @@
             <div class="sd-dropdown" id="sd-role-dropdown" data-type="role">
               <button class="sd-dropdown-toggle">
                 <span class="sd-selected">Choose...</span>
+                <span class="sd-caret" aria-hidden="true"></span>
               </button>
               <ul class="sd-dropdown-menu"></ul>
             </div>
@@ -35,6 +35,7 @@
             <div class="sd-dropdown" id="sd-goal-dropdown" data-type="goal">
               <button class="sd-dropdown-toggle" disabled>
                 <span class="sd-selected">Select a role first...</span>
+                <span class="sd-caret" aria-hidden="true"></span>
               </button>
               <ul class="sd-dropdown-menu"></ul>
             </div>
@@ -42,7 +43,11 @@
         </div>
       </section>
 
-      <section class="sd-results" aria-live="polite" aria-atomic="true">
+      <section
+        class="sd-results sd-hidden"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <div id="sd-resultSummary" class="sd-empty">
           Pick a role and a goal to see tailored suggestions here.
         </div>

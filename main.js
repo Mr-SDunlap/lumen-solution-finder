@@ -1,7 +1,7 @@
+// Shared variable to track the currently open dropdown
+let openDropdown = null;
+
 document.addEventListener("DOMContentLoaded", () => {
-  // ----------------------------------------------------
-  // 1) Role -> Goals (your data, with one typo corrected)
-  // ----------------------------------------------------
   const ROLE_TO_GOALS = {
     "Business Executive": [
       "Learn more about Lumen*",
@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Deliver live or prerecorded media content",
     ],
     "IT Decision Maker": [
-      // <- fixed spelling
       "Learn more about Lumen*",
       "Launch new services fast with scalable bandwidth",
       "Launch and scale digital experiences",
@@ -71,22 +70,22 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
     set2: {
-      name: "Performance & Edge",
+      name: "Developer Resources",
       cards: [
         {
-          title: "Edge Compute Intro",
+          title: "Developer Center",
           desc: "What, why, and when to use it.",
           img: "/assets/img/edge/intro.jpg",
           href: "#",
         },
         {
-          title: "Latency Playbook",
+          title: "API Library",
           desc: "Measure, budget, and reduce latency.",
           img: "/assets/img/edge/latency.jpg",
           href: "#",
         },
         {
-          title: "Deploy at Edge",
+          title: "APIL Product Library",
           desc: "From idea to deployed service.",
           img: "/assets/img/edge/deploy.jpg",
           href: "#",
@@ -94,91 +93,67 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
     set3: {
-      name: "Security Basics",
+      name: "Developer APIs",
       cards: [
         {
-          title: "DDoS 101",
+          title: "API Library",
           desc: "Protecting critical surfaces.",
           img: "/assets/img/sec/ddos.jpg",
           href: "#",
         },
         {
-          title: "Zero Trust",
+          title: "API Product Library",
           desc: "Principles and rollout tips.",
           img: "/assets/img/sec/zero-trust.jpg",
-          href: "#",
-        },
-        {
-          title: "SASE Primer",
-          desc: "Secure access service edge explained.",
-          img: "/assets/img/sec/sase.jpg",
           href: "#",
         },
       ],
     },
     set4: {
-      name: "Networking",
+      name: "Media & Entertainment",
       cards: [
         {
-          title: "IP Transit",
+          title: "Vyvx",
           desc: "Backbone connectivity basics.",
           img: "/assets/img/net/ip-transit.jpg",
-          href: "#",
-        },
-        {
-          title: "Wavelengths",
-          desc: "High-capacity optical links.",
-          img: "/assets/img/net/waves.jpg",
-          href: "#",
-        },
-        {
-          title: "SD-WAN",
-          desc: "Branch networking made flexible.",
-          img: "/assets/img/net/sdwan.jpg",
           href: "#",
         },
       ],
     },
     set5: {
-      name: "Cloud Connect",
+      name: "Security",
       cards: [
         {
-          title: "Direct Connect",
+          title: "Security CSA",
           desc: "Private links to hyperscalers.",
           img: "/assets/img/cloud/direct.jpg",
           href: "#",
         },
         {
-          title: "Multi-Cloud",
+          title: "Black Lotus Labs",
           desc: "Design patterns that work.",
           img: "/assets/img/cloud/multicloud.jpg",
-          href: "#",
-        },
-        {
-          title: "Cost Controls",
-          desc: "Architect for predictable spend.",
-          img: "/assets/img/cloud/costs.jpg",
           href: "#",
         },
       ],
     },
     set6: {
-      name: "Observability",
+      name: "Infrastructure",
       cards: [
         {
-          title: "Metrics 101",
+          title: "Infrastructure CSA",
           desc: "SLOs, SLIs, and alerts.",
           img: "/assets/img/obs/metrics.jpg",
           href: "#",
         },
         {
-          title: "Tracing",
+          title: "Wavelengths",
           desc: "Find latency hot spots.",
           img: "/assets/img/obs/tracing.jpg",
           href: "#",
         },
         {
-          title: "Logs",
+          title: "Edge Storage",
           desc: "Actionable logging practices.",
           img: "/assets/img/obs/logs.jpg",
           href: "#",
@@ -186,22 +161,22 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
     set7: {
-      name: "Website Speed",
+      name: "Communication",
       cards: [
         {
-          title: "Core Web Vitals",
+          title: "Communication CSA",
           desc: "Quick wins for LCP/CLS/INP.",
           img: "/assets/img/web/vitals.jpg",
           href: "#",
         },
         {
-          title: "Caching",
+          title: "Next-Gen Voice",
           desc: "Layered caching that sticks.",
           img: "/assets/img/web/cache.jpg",
           href: "#",
         },
         {
-          title: "Images",
+          title: "Lumen Cloud Communications",
           desc: "Modern formats & CDNs.",
           img: "/assets/img/web/images.jpg",
           href: "#",
@@ -209,45 +184,33 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
     set8: {
-      name: "E-commerce",
+      name: "Hyperscaler",
       cards: [
         {
-          title: "Frictionless Flow",
+          title: "PCF",
           desc: "Reduce cart abandonment.",
           img: "/assets/img/ecom/flow.jpg",
-          href: "#",
-        },
-        {
-          title: "Payments",
-          desc: "Options & risk reduction.",
-          img: "/assets/img/ecom/payments.jpg",
-          href: "#",
-        },
-        {
-          title: "Search",
-          desc: "Better discovery = more sales.",
-          img: "/assets/img/ecom/search.jpg",
           href: "#",
         },
       ],
     },
     set9: {
-      name: "Content Delivery",
+      name: "Learn Analyst",
       cards: [
         {
-          title: "CDN Primer",
+          title: "Investor Relations",
           desc: "How CDNs accelerate content.",
           img: "/assets/img/cdn/primer.jpg",
           href: "#",
         },
         {
-          title: "Cache Keys",
+          title: "Newsroom",
           desc: "Keys, TTLs, and invalidation.",
           img: "/assets/img/cdn/keys.jpg",
           href: "#",
         },
         {
-          title: "Media Optim",
+          title: "Why Lumen",
           desc: "Streaming best practices.",
           img: "/assets/img/cdn/media.jpg",
           href: "#",
@@ -255,45 +218,33 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
     set10: {
-      name: "Data & AI",
+      name: "Product Finder",
       cards: [
         {
-          title: "Pipelines",
+          title: "Product Finder",
           desc: "ETL to real-time feeds.",
           img: "/assets/img/ai/pipes.jpg",
-          href: "#",
-        },
-        {
-          title: "Feature Store",
-          desc: "Serve ML features reliably.",
-          img: "/assets/img/ai/feature.jpg",
-          href: "#",
-        },
-        {
-          title: "Guardrails",
-          desc: "Safe & compliant AI usage.",
-          img: "/assets/img/ai/guard.jpg",
           href: "#",
         },
       ],
     },
     set11: {
-      name: "Contact & Next Steps",
+      name: "Connectivity",
       cards: [
         {
-          title: "Talk to Sales",
+          title: "Connectivity CSA",
           desc: "Get tailored guidance.",
           img: "/assets/img/next/sales.jpg",
           href: "#",
         },
         {
-          title: "Customer Stories",
+          title: "Internet Services",
           desc: "See real deployments.",
           img: "/assets/img/next/stories.jpg",
           href: "#",
         },
         {
-          title: "Pricing",
+          title: "On Demand Services",
           desc: "Get estimates and plans.",
           img: "/assets/img/next/pricing.jpg",
           href: "#",
@@ -302,18 +253,59 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  // ----------------------------------------------------
-  // 3) Optional mapping role+goal -> set key
-  // ----------------------------------------------------
   const SET_ROUTER = {
-    // e.g. "IT Decision Maker": { "Launch new services fast with scalable bandwidth": "set2" }
+    "Business Executive": {
+      "Learn more about Lumen*": "learnLumen", //
+      "Accelerate innovation with agile, AI-ready connectivity": "set11", // Connectivity
+      "(missing on word doc)": "set6", // Infrastructure
+      "Safeguard applications and data with integrated security solutions":
+        "set5", // Security
+      "Start a conversation about voice applications": "set7", // Communication
+      "Source scalable, secure infrastructure for AI demands": "set6", // Infrastructure
+      "Deliver live or prerecorded media content": "set4", // Media & Entertainment
+    },
+    "IT Decision Maker": {
+      "Learn more about Lumen*": "learnLumen", //Learn about Lumen
+      "Launch new services fast with scalable bandwidth": "set11", // Connectivity
+      "Launch and scale digital expeLaunch and scale digital experiences":
+        "set6", // Infrastructure
+      "Address cyberattacks with advanced threat intelligence": "set5", // Security
+      "Enhance customer interactions and scale communications": "set7", // Communication
+      "Enable high-capacity connections for large AI deployments": "set9", // Hyperscaler
+      "Deliver live broadcasts or prerecorded content": "set4", // Media & Entertainment
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    Investor: {
+      "Learn more about Lumen*": "learnLumen", // Learn about Lumen
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    "Procurement Manager": {
+      "Learn more about Lumen*": "learnLumen", // Learn about Lumen
+      "Optimize IT investments by streamlining workflows": "set11", // Connectivity
+      "Source high bandwidth with predictable costs": "set6", // Infrastructure
+      "Drive efficiency and minimize costs with integrated security tools":
+        "set5", // Security
+      "Optimize revenue with predictable communications budgets": "set7", // Communication
+      "Use AI to streamline operations": "set9", // Hyperscaler
+      "Deliver live broadcasts or prerecorded content": "set4", // Media & Entertainment
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    Developer: {
+      "Learn more about Lumen*": "learnLumen", // Learn about Lumen
+      "Explore Developer resources*": "set2", // Developer Resources
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    "Industry Ananlyst": {
+      "Learn more about Lumen*": "learnLumen", // Learn about Lumen
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    Other: {
+      "Learn more about Lumen*": "learnLumen", // Learn about Lumen
+      "Explore Lumen products": "set10", // Product Finder
+    },
   };
   const chooseSet = (role, goal) =>
     (SET_ROUTER[role] && SET_ROUTER[role][goal]) || "learnLumen";
-
-  // ----------------------------------------------------
-  // 4) Dropdown wiring (custom animated)
-  // ----------------------------------------------------
   const roleDropdown = document.querySelector("#sd-role-dropdown");
   const goalDropdown = document.querySelector("#sd-goal-dropdown");
 
@@ -322,7 +314,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedText = dropdown.querySelector(".sd-selected");
     const menu = dropdown.querySelector(".sd-dropdown-menu");
 
-    // Build menu
     menu.innerHTML = "";
     options.forEach((opt) => {
       const li = document.createElement("li");
@@ -337,6 +328,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isOpen = false;
     function openMenu() {
+      // If another dropdown is open and it's not this one, close it first
+      if (openDropdown && openDropdown !== menu) {
+        if (openDropdown.closeMenu) openDropdown.closeMenu();
+      }
       isOpen = true;
       menu.style.pointerEvents = "auto";
       anime({
@@ -347,6 +342,10 @@ document.addEventListener("DOMContentLoaded", () => {
         easing: "easeOutQuad",
       });
       toggle.classList.add("open");
+      // Set openDropdown to reference this dropdown's closeMenu
+      openDropdown = { closeMenu };
+      // For direct comparison in the check above, also store menu on the object
+      openDropdown.menu = menu;
     }
     function closeMenu() {
       isOpen = false;
@@ -359,6 +358,10 @@ document.addEventListener("DOMContentLoaded", () => {
         easing: "easeInQuad",
       });
       toggle.classList.remove("open");
+      // If this dropdown was the open one, clear openDropdown
+      if (openDropdown && openDropdown.menu === menu) {
+        openDropdown = null;
+      }
     }
     toggle.addEventListener("click", () => {
       if (toggle.disabled) return;
@@ -366,9 +369,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ----------------------------------------------------
-  // 5) Rendering a set (3 cards)
-  // ----------------------------------------------------
   function renderSet(setKey, role, goal) {
     const summary = document.querySelector("#sd-resultSummary");
     const grid = document.querySelector("#sd-resultGrid");
@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${c.desc || ""}</p>
             <a href="${
               c.href || "#"
-            }" target="_blank" rel="noopener">Explore this suggestion</a>
+            }" target="_blank" rel="noopener">Learn more</a>
           </div>
         `;
       grid.appendChild(card);
@@ -409,36 +409,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Helper for goal select
   function onSelectRoleAndGoal(role, goal) {
     renderSet(chooseSet(role, goal), role, goal);
   }
 
-  // ----------------------------------------------------
-  // 6) Initialize with defaults (always show something)
-  // ----------------------------------------------------
   const roleKeys = Object.keys(ROLE_TO_GOALS);
   const defaultRole = roleKeys[0];
   const defaultGoal = ROLE_TO_GOALS[defaultRole][0];
+  let selectedRole = null;
+  let selectedGoal = null;
+
+  const resultsSection = document.querySelector(".sd-results"); // to toggle visibility
+  const goalSelectedSpan = () =>
+    document.querySelector("#sd-goal-dropdown .sd-selected");
+  resultsSection.classList.add("sd-hidden");
 
   // Role dropdown
   setupDropdown(roleDropdown, roleKeys, (role) => {
+    selectedRole = role;
+    selectedGoal = null;
+
+    // Enable and populate goal dropdown for the chosen role
     const goalToggle = goalDropdown.querySelector(".sd-dropdown-toggle");
     goalToggle.disabled = false;
+
+    // Reset goal placeholder text now that it's enabled
+    goalSelectedSpan().textContent = "Choose...";
+
     setupDropdown(goalDropdown, ROLE_TO_GOALS[role], (goal) => {
-      onSelectRoleAndGoal(role, goal);
+      selectedGoal = goal;
+
+      // Only render once both have values
+      if (selectedRole && selectedGoal) {
+        onSelectRoleAndGoal(selectedRole, selectedGoal);
+        resultsSection.classList.remove("sd-hidden");
+      }
     });
+
+    // Hide results until the user picks a goal
+    resultsSection.classList.add("sd-hidden");
   });
 
-  // Goal dropdown defaults
+  // Goal dropdown initially disabled until a role is chosen.
+  // If you want it pre-enabled with the default role's list (but no auto-select), do:
   const goalToggle = goalDropdown.querySelector(".sd-dropdown-toggle");
-  goalToggle.disabled = false;
-  setupDropdown(goalDropdown, ROLE_TO_GOALS[defaultRole], (goal) => {
-    onSelectRoleAndGoal(defaultRole, goal);
-  });
+  // keep it disabled at first; it will be enabled after role selection
+  // goalToggle.disabled = true; // (already true in HTML)
 
-  // Show defaults in UI + render default set
-  roleDropdown.querySelector(".sd-selected").textContent = defaultRole;
-  goalDropdown.querySelector(".sd-selected").textContent = defaultGoal;
-  renderSet("learnLumen", defaultRole, defaultGoal);
+  // (Optional) If you want to pre-populate the goal list for the first role WITHOUT enabling it, uncomment:
+  // setupDropdown(goalDropdown, ROLE_TO_GOALS[defaultRole], () => {});
 });
