@@ -1,14 +1,12 @@
 :root {
   --bg: #ffffff;
   --panel: #f2f0f1;
-  --muted: #f2f0f1;
+  --sd-lumen-platinum: #f2f0f1;
   --text: #000;
-  --accent: #60a5fa;
-  --accent-2: #34d399;
+  --sd-lumen-med-teal: #007981;
   --ring: #f95e4a;
   --radius-pill: 9999px;
   --radius-card: 16px;
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 * {
   box-sizing: border-box;
@@ -55,12 +53,23 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: clamp(16px, 3vw, 32px);
+  min-height: 700px;
 }
-h1 {
-  font-size: clamp(24px, 3.5vw, 40px);
-  line-height: 1.1;
+.sd-wrap h1 {
+  font-size: 36px;
+  line-height: 40px;
   margin: 20px 0 40px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  @media (max-width: 425px) {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+  }
 }
 .sd-lead {
   margin: 0 0 24px;
@@ -104,7 +113,7 @@ h1 {
 }
 .sd-select-wrap select:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--sd-lumen-med-teal);
   box-shadow: 0 0 0 4px var(--ring);
 }
 .sd-select-wrap::after {
@@ -216,12 +225,6 @@ h1 {
     color: #007981 !important;
   }
 }
-.sd-eyebrow {
-  font-size: 12px;
-  color: #f95e4a;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-}
 .sd-card h3 {
   margin: 6px 0 8px;
   font-size: 18px;
@@ -235,15 +238,9 @@ h1 {
   text-decoration: none;
   color: #0ea5e9;
 }
-.sd-empty {
-  border: 1px dashed rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-card);
-  padding: 16px;
-  color: black;
-  text-align: center;
-}
+
 .sd-hint {
-  color: var(--muted);
+  color: var(--sd-lumen-platinum);
   font-size: 13px;
   margin-top: 6px;
 }
@@ -251,6 +248,22 @@ h1 {
   display: grid;
   gap: 18px;
   grid-template-columns: 1fr;
+}
+/* Empty state card that matches card dimensions */
+.sd-card.sd-empty-state {
+  min-height: 260px; /* ~ image (200) + content space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--sd-lumen-platinum);
+  border: 1px solid #d0d4d9;
+  color: #6b7280; /* neutral text */
+  padding: 18px;
+}
+
+.sd-card.sd-empty-state strong {
+  color: #007981;
 }
 
 /* Center the last card on its own row between 914px and 596px */
