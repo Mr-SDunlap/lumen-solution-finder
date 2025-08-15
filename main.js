@@ -387,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.innerHTML = `
           <div class="sd-card-image"><img src="${safeImg}" alt="${
         c.title
-      }"></div>
+      }" loading="lazy" decoding="async" width="400" height="200"></div>
           <div class="sd-card-content">
             <h3>${c.title}</h3>
             <p>${c.desc || ""}</p>
