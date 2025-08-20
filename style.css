@@ -8,6 +8,7 @@
   --radius-pill: 9999px;
   --radius-card: 16px;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -17,8 +18,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Gotham book", "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background: #ffffff;
 }
@@ -38,12 +38,26 @@ body {
   width: 16px;
   height: 16px;
   margin-left: 10px;
-  opacity: 0.9;
-  /* Use mask + current text color for high-contrast caret */
-  -webkit-mask: no-repeat center / 20px 20px
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M7 10l5 5 5-5z"/></svg>');
-  background-color: #007981;
+  position: relative;
   transition: transform 0.2s ease;
+}
+.sd-caret-left,
+.sd-caret-right {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+
+  background-color: #007981;
+}
+.sd-caret-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-30%) rotate(45deg);
+}
+.sd-caret-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(30%) rotate(-45deg);
 }
 
 .sd-dropdown-toggle.open .sd-caret {
@@ -53,21 +67,23 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: clamp(16px, 3vw, 32px);
-  min-height: 700px;
+  padding-top: 0;
 }
 .sd-wrap h1 {
-  font-size: 36px;
-  line-height: 40px;
-  margin: 20px 0 40px;
+  font-size: 48px;
+  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  line-height: 50px;
+  color: #000;
+  margin: 0 0 40px;
   text-align: center;
 
-  @media (max-width: 768px) {
-    font-size: 30px;
-    line-height: 32px;
+  @media (max-width: 1024px) {
+    font-size: 38px;
+    line-height: 40px;
   }
   @media (max-width: 425px) {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 24px;
+    line-height: 30px;
     text-align: left;
   }
 }
@@ -90,10 +106,23 @@ body {
   gap: 8px;
 }
 .sd-field label {
-  font-size: 14px;
+  font-family: "Gotham medium", "Helvetica Neue", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 40px;
   color: #f95e4a;
   font-weight: 600;
-  letter-spacing: 0.2px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+  }
 }
 .sd-select-wrap {
   position: relative;
@@ -139,10 +168,11 @@ body {
 }
 
 .sd-dropdown-toggle {
+  font-family: "Gotham book", "Helvetica Neue", Arial, sans-serif;
   position: relative;
   background: #fff;
   color: var(--text);
-  border-radius: var(--radius-pill);
+  border-radius: 8px;
   border: 1px solid #d0d4d9;
   padding: 14px 16px;
   font-size: 16px;
@@ -168,7 +198,7 @@ body {
   right: 0;
   background: #fff;
   border: 1px solid #d0d4d9;
-  border-radius: 20px; /* rounded bottom only */
+  border-radius: 8px; /* rounded bottom only */
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
@@ -193,12 +223,20 @@ body {
   margin-top: 24px;
   display: grid;
   gap: 16px;
+
+  @media (max-width: 425px) {
+    margin-top: 0;
+  }
 }
 .sd-result-grid {
   display: grid;
   justify-items: center;
   gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  @media (max-width: 425px) {
+    gap: 20px;
+  }
 }
 .sd-card {
   width: clamp(260px, 100%, 480px);
@@ -220,23 +258,71 @@ body {
 
 .sd-card-content {
   padding: 18px; /* padding only for text and link */
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
 
-  a {
-    color: #007981 !important;
-  }
+.sd-card-content a {
+  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  color: #007981 !important;
+  margin-top: auto;
+  align-self: flex-start;
+}
+.sd-card-content a:hover > .sd-arrow {
+  transform: translateX(8px);
+}
+
+.sd-arrow {
+  position: relative;
+  width: 26px;
+  height: 16px;
+  transition: transform 250ms ease;
+}
+.sd-arrow-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 50vw;
+  background-color: #fb8429;
+  transform: translateY(-50%);
+}
+.sd-arrow-top-tic,
+.sd-arrow-bottom-tic {
+  position: absolute;
+  width: 6px;
+  height: 1.5px;
+  background-color: #fb8429;
+  border-radius: 50vw;
+}
+.sd-arrow-top-tic {
+  top: 0;
+  left: 0;
+  transform: translateY(370%) translateX(360%) rotate(45deg);
+}
+.sd-arrow-bottom-tic {
+  bottom: 0;
+  left: 0;
+  transform: translateY(-370%) translateX(360%) rotate(-45deg);
 }
 .sd-card h3 {
-  margin: 6px 0 8px;
-  font-size: 18px;
+  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  font-size: 24px;
 }
-.sd-card p {
-  margin: 0 0 12px;
-  color: #000;
-}
+
 .sd-card a {
   display: inline-block;
   text-decoration: none;
-  color: #0ea5e9;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.sd-tertiary-cta {
+  color: #007981 !important;
+  margin: 0 !important;
 }
 
 .sd-hint {
@@ -249,23 +335,46 @@ body {
   gap: 18px;
   grid-template-columns: 1fr;
 }
-/* Empty state card that matches card dimensions */
-.sd-card.sd-empty-state {
-  min-height: 260px; /* ~ image (200) + content space */
+
+.sd-empty-state {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--sd-lumen-platinum);
-  border: 1px solid #d0d4d9;
-  color: #6b7280; /* neutral text */
-  padding: 18px;
+  border: none;
 }
 
-.sd-card.sd-empty-state strong {
-  color: #007981;
+.sd-card p {
+  margin: 10px 0 20px;
+  padding: 0;
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
 }
 
+.sd-superscript {
+  font-size: 10px;
+}
+
+#sd-resultSummary {
+  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 36px;
+  line-height: 40px;
+  color: #000;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  @media (max-width: 425px) {
+    padding: 20px 0 10px;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+  }
+}
 /* Center the last card on its own row between 914px and 596px */
 @media (max-width: 914px) and (min-width: 596px) {
   .sd-result-grid:has(> :nth-child(3):last-child) > :last-child {

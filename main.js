@@ -2,42 +2,42 @@ let openDropdown = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   const ROLE_TO_GOALS = {
-    "Business Executive": [
+    "A business executive": [
       "Learn more about Lumen",
-      "Accelerate innovation with agile, AI-ready connectivity",
-      "Safeguard applications and data with integrated security solutions",
-      "Start a conversation about voice applications",
-      "Source scalable, secure infrastructure for AI demands",
-      "Deliver live or prerecorded media content",
+      "Innovate faster with AI-ready connectivity",
+      "Safeguard applications and data",
+      "Optimize your collaboration strategy",
+      "Source infrastructure for AI demands",
+      "Deliver media content",
     ],
-    "IT Decision Maker": [
+    "An IT decision maker": [
       "Learn more about Lumen",
-      "Launch new services fast with scalable bandwidth",
-      "Launch and scale digital experiences",
-      "Address cyberattacks with advanced threat intelligence",
-      "Enhance customer interactions and scale communications",
-      "Enable high-capacity connections for large AI deployments",
-      "Deliver live broadcasts or prerecorded content",
+      "Launch scalable services on demand",
+      "Launch high-bandwidth services",
+      "Defend against cyberattacks",
+      "Enhance and scale customer interactions",
+      "Enable high-capacity connections for AI workloads",
+      "Deliver media content",
       "Explore Lumen products",
     ],
-    Investor: ["Learn more about Lumen", "Explore Lumen products"],
-    "Procurement Manager": [
+    "An investor": ["Learn more about Lumen", "Explore Lumen products"],
+    "A procurement manager": [
       "Learn more about Lumen",
-      "Optimize IT investments by streamlining workflows",
-      "Source high bandwidth with predictable costs",
-      "Drive efficiency and minimize costs with integrated security tools",
-      "Optimize revenue with predictable communications budgets",
-      "Use AI to streamline operations",
-      "Deliver live broadcasts or prerecorded content",
+      "Streamline IT workflows",
+      "Get high bandwidth with predictable costs",
+      "Lower costs with integrated security",
+      "Lower CapEX spend on communications",
+      "Streamline operations with AI",
+      "Deliver media content",
       "Explore Lumen products",
     ],
-    Developer: [
+    "A developer": [
       "Learn more about Lumen",
-      "Explore Developer resources",
+      "Explore developer resources",
       "Explore APIs",
     ],
-    "Industry Analyst": ["Learn more about Lumen", "Explore Lumen products"],
-    Other: ["Learn more about Lumen", "Explore Lumen products"],
+    "An industry analyst": ["Learn more about Lumen", "Explore Lumen products"],
+    "In another role": ["Learn more about Lumen", "Explore Lumen products"],
   };
 
   // ----------------------------------------------------
@@ -51,11 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "Why Lumen?",
           desc: "See how Lumen helps drive business growth with quick, secure and effortless solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/wholesale-network-maps?Creativeid=882cfba8-f202-4ae3-8689-b275f9969a63",
-          href: "https://www.lumen.com/en-us/about.html/content/lumen/en-us",
+          href: "https://www.lumen.com/en-us/why-lumen.html/content/lumen/en-us",
         },
         {
-          title: "LCF",
-          desc: "TBD",
+          title:
+            "Lumen® Connectivity Fabric<sup class='sd-superscript'>SM</sup>",
+          desc: "Meet AI demands with a single port, self-service portal and full lifecycle automation.",
           img: "https://assets.lumen.com/is/image/Lumen/LE-resources-card-7?Creativeid=b9f782c2-b1cb-493c-9b1f-45a928b6593c",
           href: "https://www.lumen.com/en-us/lumen-connectivity-fabric/content/lumen/en-us",
         },
@@ -78,12 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "API Library",
-          desc: "Explore the APIs offered by Lumen and how they can help you meet evolving demands.",
+          desc: "Explore the APIs Lumen offers and how they can help you meet evolving demands.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-enterprise-infographic?Creativeid=2ab3ebbf-49c7-43d2-b254-3888fc537f17",
           href: "https://developer.lumen.com/library/content/lumen/en-us",
         },
         {
-          title: "APIL Product Library",
+          title: "API Product Library",
           desc: "Browse our diverse suite of products and find the solutions best suited to your business needs.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-secure-your-future-blog?Creativeid=49906121-5423-4651-a2f6-9388340c3b3d",
           href: "https://developer.lumen.com/products#allProducts/content/lumen/en-us",
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cards: [
         {
           title: "API Library",
-          desc: "Explore the APIs offered by Lumen and how they can help you meet evolving demands.",
+          desc: "Explore the APIs Lumen offers and how they can help you meet evolving demands.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-enterprise-infographic?Creativeid=2ab3ebbf-49c7-43d2-b254-3888fc537f17",
           href: "https://developer.lumen.com/library/content/lumen/en-us",
         },
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Media & Entertainment",
       cards: [
         {
-          title: "Vyvx Solutions",
+          title: "Lumen® Vyvx® Broadcast Solutions",
           desc: "Transform your broadcasting capabilities with our full portfolio of end-to-end video transport solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/resource-5-ways-to-supercharge-your-strategy-to-accelerate-growth?Creativeid=ee0b1f4a-9e52-4f31-8b5b-624f204ddce9",
           href: "https://www.lumen.com/en-us/edge-cloud/vyvx-broadcast-solutions.html/content/lumen/en-us",
@@ -123,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cards: [
         {
           title: "Security CSA",
-          desc: "TBD",
+          desc: "Fortify your apps and data with expert-backed integrated cybersecurity solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/dia-sase-bundle-resources-card?Creativeid=4b624977-9450-41ef-b265-ff68cbed1279",
           href: "https://www.lumen.com/en-us/services/security/content/lumen/en-us",
         },
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cards: [
         {
           title: "Infrastructure CSA",
-          desc: "TBD",
+          desc: "Build a tailored, AI-ready foundation that meets your business needs.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-social-engineering-blog?Creativeid=9a489328-f416-4a10-9742-b9b81b70de94",
           href: "https://www.lumen.com/en-us/services/infrastructure.html/content/lumen/en-us",
         },
@@ -163,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cards: [
         {
           title: "Communication CSA",
-          desc: "TBD",
+          desc: "Optimize your collaboration with seamless connectivity services.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-Finance%20Trends-Resource%20card-480x200?Creativeid=eaae238b-fbcd-490e-83d3-871d4c79ca29",
           href: "https://www.lumen.com/en-us/services/communication.html/content/lumen/en-us",
         },
@@ -171,13 +172,13 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "Next-Gen Voice",
           desc: "Transform your communications with cloud-based business voice solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/wholesale%20voice?Creativeid=35549077-a059-49c9-8144-994be2cd16e7",
-          href: "https://www.lumen.com/en-us/services/lumen-cloud-communications.html/content/lumen/en-us",
+          href: "https://www.lumen.com/en-us/collaboration/voice.html/content/lumen/en-us",
         },
         {
           title: "Lumen Cloud Communications (Not in copy doc)",
           desc: "TBD",
           img: "https://assets.lumen.com/is/image/Lumen/wholesale-support?Creativeid=b2210642-26fd-47fd-a2ad-0fffbb25ff36",
-          href: "#",
+          href: "https://www.lumen.com/en-us/services/lumen-cloud-communications.html/content/lumen/en-us",
         },
       ],
     },
@@ -220,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cards: [
         {
           title: "Product Finder",
-          desc: "Search our product library and find the right fit for your business.",
+          desc: "Explore our product library and find the right fit for your business.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-AI-essentials-checklist?Creativeid=33939aa2-ac20-45a6-b985-c69903120b1a",
           href: "https://www.lumen.com/en-us/resources/product-finder.html/content/lumen/en-us",
         },
@@ -231,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cards: [
         {
           title: "Connectivity CSA",
-          desc: "TBD",
+          desc: "Meet next-gen data demands with flexible, high-bandwidth, low-latency connectivity solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/naas-analyst-report?Creativeid=923c04ac-90bf-4984-8eb4-bd91372ee89a",
           href: "https://www.lumen.com/en-us/services/connectivity.html/content/lumen/en-us",
         },
@@ -252,51 +253,48 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const SET_ROUTER = {
-    "Business Executive": {
+    "A business executive": {
       "Learn more about Lumen": "learnLumen", //
-      "Accelerate innovation with agile, AI-ready connectivity": "set11", // Connectivity
-      "Safeguard applications and data with integrated security solutions":
-        "set5", // Security
-      "Start a conversation about voice applications": "set7", // Communication
-      "Source scalable, secure infrastructure for AI demands": "set6", // Infrastructure
-      "Deliver live or prerecorded media content": "set4", // Media & Entertainment
+      "Innovate faster with AI-ready connectivity": "set11", // Connectivity
+      "Safeguard applications and data": "set5", // Security
+      "Optimize your collaboration strategy": "set7", // Communication
+      "Source infrastructure for AI demands": "set6", // Infrastructure
+      "Deliver media content": "set4", // Media & Entertainment
     },
-    "IT Decision Maker": {
+    "An IT decision maker": {
       "Learn more about Lumen": "learnLumen", //Learn about Lumen
-      "Launch new services fast with scalable bandwidth": "set11", // Connectivity
-      "Launch and scale digital expeLaunch and scale digital experiences":
-        "set6", // Infrastructure
-      "Address cyberattacks with advanced threat intelligence": "set5", // Security
-      "Enhance customer interactions and scale communications": "set7", // Communication
-      "Enable high-capacity connections for large AI deployments": "set9", // Hyperscaler
-      "Deliver live broadcasts or prerecorded content": "set4", // Media & Entertainment
+      "Launch scalable services on demand": "set11", // Connectivity
+      "Launch high-bandwidth services": "set6", // Infrastructure
+      "Defend against cyberattacks": "set5", // Security
+      "Enhance and scale customer interactions": "set7", // Communication
+      "Enable high-capacity connections for AI workloads": "set8", // Hyperscaler
+      "Deliver media content": "set4", // Media & Entertainment
       "Explore Lumen products": "set10", // Product Finder
     },
-    Investor: {
+    "An investor": {
+      "Learn more about Lumen": "set9", // Learn analyst
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    "A procurement manager": {
+      "Learn more about Lumen": "learnLumen", // Learn about Lumen
+      "Streamline IT workflows": "set11", // Connectivity
+      "Get high bandwidth with predictable costs": "set6", // Infrastructure
+      "Lower costs with integrated security": "set5", // Security
+      "Lower CapEX spend on communications": "set7", // Communication
+      "Streamline operations with AI": "set8", // Hyperscaler
+      "Deliver media content": "set4", // Media & Entertainment
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    "A developer": {
+      "Learn more about Lumen": "learnLumen", // Learn about Lumen
+      "Explore developer resources": "set2", // Developer Resources
+      "Explore APIs": "set3", // Developer APIs
+    },
+    "An industry analyst": {
       "Learn more about Lumen": "learnLumen", // Learn about Lumen
       "Explore Lumen products": "set10", // Product Finder
     },
-    "Procurement Manager": {
-      "Learn more about Lumen": "learnLumen", // Learn about Lumen
-      "Optimize IT investments by streamlining workflows": "set11", // Connectivity
-      "Source high bandwidth with predictable costs": "set6", // Infrastructure
-      "Drive efficiency and minimize costs with integrated security tools":
-        "set5", // Security
-      "Optimize revenue with predictable communications budgets": "set7", // Communication
-      "Use AI to streamline operations": "set9", // Hyperscaler
-      "Deliver live broadcasts or prerecorded content": "set4", // Media & Entertainment
-      "Explore Lumen products": "set10", // Product Finder
-    },
-    Developer: {
-      "Learn more about Lumen": "learnLumen", // Learn about Lumen
-      "Explore Developer resources": "set2", // Developer Resources
-      "Explore APIs": "set10", // Product Finder
-    },
-    "Industry Ananlyst": {
-      "Learn more about Lumen": "learnLumen", // Learn about Lumen
-      "Explore Lumen products": "set10", // Product Finder
-    },
-    Other: {
+    "In another role": {
       "Learn more about Lumen": "learnLumen", // Learn about Lumen
       "Explore Lumen products": "set10", // Product Finder
     },
@@ -368,14 +366,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderEmptyState() {
     const grid = document.querySelector("#sd-resultGrid");
     grid.innerHTML = "";
+    const summary = document.querySelector("#sd-resultSummary");
+    if (summary) summary.textContent = "";
     const empty = document.createElement("div");
     empty.className = "sd-card sd-empty-state";
-    empty.innerHTML = `<p><strong>Please make a selection to see a result</p>`;
+    empty.innerHTML = ``;
     grid.appendChild(empty);
   }
 
   function renderSet(setKey, role, goal) {
     const grid = document.querySelector("#sd-resultGrid");
+    const summary = document.querySelector("#sd-resultSummary");
+    if (summary) {
+      summary.textContent = "Based on your answers, here's what we'd suggest:";
+    }
     const setObj = OUTCOME_SETS[setKey] || OUTCOME_SETS.learnLumen;
 
     grid.innerHTML = "";
@@ -391,9 +395,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="sd-card-content">
             <h3>${c.title}</h3>
             <p>${c.desc || ""}</p>
-            <a href="${
-              c.href || "#"
-            }" target="_blank" rel="noopener">Learn more</a>
+            <a href="${c.href || "#"}" target="_blank" rel="noopener">
+            <p class="sd-tertiary-cta">Learn more</p>
+            <div class="sd-arrow">
+              <span class="sd-arrow-line"></span>
+              <span class="sd-arrow-top-tic"></span>
+              <span class="sd-arrow-bottom-tic"></span>
+            </div>
+            </a>
           </div>
         `;
       grid.appendChild(card);
