@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
         targets: menu,
         opacity: [1, 0],
         translateY: [0, -5],
-        duration: 180,
+        duration: 200,
         easing: "easeInQuad",
       });
       toggle.classList.remove("open");
@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }" loading="lazy" decoding="async" width="400" height="200"></div>
           <div class="sd-card-content">
             <h3>${c.title}</h3>
-            <p>${c.desc || ""}</p>
+            <p class="sd-card-description">${c.desc || ""}</p>
             <a href="${c.href || "#"}" target="_blank" rel="noopener">
             <p class="sd-tertiary-cta">Learn more</p>
             <div class="sd-arrow">

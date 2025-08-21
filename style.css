@@ -18,7 +18,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Gotham book", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Gotham", "Helvetica", Arial, sans-serif;
   color: var(--text);
   background: #ffffff;
 }
@@ -73,6 +73,7 @@ body {
   font-size: 48px;
   font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
   line-height: 50px;
+  font-weight: 500;
   color: #000;
   margin: 0 0 40px;
   text-align: center;
@@ -110,7 +111,7 @@ body {
   font-size: 36px;
   line-height: 40px;
   color: #f95e4a;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -205,9 +206,12 @@ body {
   transform: translateY(-5px); /* small offset for animation */
   z-index: 2;
   padding: 0;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 .sd-dropdown-menu li {
+  font-family: "Gotham book", "Helvetica Neue", Arial, sans-serif;
   padding: 12px 16px;
   cursor: pointer;
   color: var(--text);
@@ -220,9 +224,12 @@ body {
   background: #f2f0f1;
 }
 .sd-results {
-  margin-top: 24px;
+  margin-top: 60px;
   display: grid;
-  gap: 16px;
+
+  @media (max-width: 1199px) {
+    margin-top: 40px;
+  }
 
   @media (max-width: 425px) {
     margin-top: 0;
@@ -265,6 +272,7 @@ body {
 
 .sd-card-content a {
   font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
   color: #007981 !important;
   margin-top: auto;
   align-self: flex-start;
@@ -311,6 +319,7 @@ body {
   font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   font-size: 24px;
+  font-weight: 500;
 }
 
 .sd-card a {
@@ -356,20 +365,25 @@ body {
   font-size: 10px;
 }
 
+.sd-card-description {
+  font-family: "Gotham book", "Helvetica", Arial, sans-serif !important;
+}
+
 #sd-resultSummary {
   font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
   text-align: center;
-  padding-bottom: 20px;
-  font-size: 36px;
-  line-height: 40px;
+  padding-bottom: 40px;
+  font-size: 24px;
+  line-height: 32px;
   color: #000;
 
   @media (max-width: 768px) {
-    font-size: 30px;
-    line-height: 32px;
+    padding-bottom: 20px;
   }
+
   @media (max-width: 425px) {
-    padding: 20px 0 10px;
+    padding: 20px 0 20px;
     font-size: 20px;
     line-height: 28px;
     text-align: left;
