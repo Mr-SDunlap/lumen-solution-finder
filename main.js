@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
           desc: "See how Lumen helps drive business growth with quick, secure and effortless solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/wholesale-network-maps?Creativeid=882cfba8-f202-4ae3-8689-b275f9969a63",
           href: "https://www.lumen.com/en-us/why-lumen.html/content/lumen/en-us",
-          alt: "",
+          alt: "Man sitting at a desk looking at a laptop computer",
         },
         {
           title:
@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector("#sd-resultGrid");
     const summary = document.querySelector("#sd-resultSummary");
     if (summary) {
-      summary.textContent = "Based on your answers, here's what we'd suggest:";
+      summary.textContent = "Based on your answers, here's what we suggest:";
     }
     const setObj = OUTCOME_SETS[setKey] || OUTCOME_SETS.learnLumen;
 

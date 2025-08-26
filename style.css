@@ -23,7 +23,9 @@ body {
   background: #ffffff;
 }
 .sd-hidden {
-  display: none;
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .sd-dropdown-toggle {
   display: flex;
@@ -66,8 +68,15 @@ body {
 .sd-wrap {
   max-width: 960px;
   margin: 0 auto;
-  padding: clamp(16px, 3vw, 32px);
-  padding-top: 0;
+  padding-inline: clamp(16px, 3vw, 32px);
+  padding-top: 80px;
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
+  @media (max-width: 425px) {
+    padding-top: 40px;
+  }
 }
 .sd-wrap h1 {
   font-size: 48px;
