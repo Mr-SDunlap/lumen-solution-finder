@@ -69,14 +69,6 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding-inline: clamp(16px, 3vw, 32px);
-  padding-top: 80px;
-
-  @media (max-width: 768px) {
-    padding-top: 60px;
-  }
-  @media (max-width: 425px) {
-    padding-top: 40px;
-  }
 }
 body .sd-wrap header h1 {
   font-size: 48px;
@@ -204,7 +196,7 @@ body .sd-wrap header h1 {
 
 .sd-dropdown-menu {
   position: absolute;
-  top: 80%; /* sits directly below the toggle */
+  top: 80%; /* change this to mod the dropdown height*/
   left: 0;
   right: 0;
   background: #fff;

@@ -78,14 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "Developer Center",
           desc: "See how developers are using Lumen APIs and get started today.",
           img: "https://assets.lumen.com/is/image/Lumen/brief-boost-your-competitive-card?Creativeid=c99cbb15-876a-42e8-9dc8-37bbd9969ef8",
-          href: "https://developer.lumen.com/content/lumen/en-us",
+          href: "https://developer.lumen.com",
           alt: "Two coworkers sit at the corner of a table talking in a light, sunny background.",
         },
         {
           title: "API Library",
           desc: "Explore the APIs Lumen offers and how they can help you meet evolving demands.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-enterprise-infographic?Creativeid=2ab3ebbf-49c7-43d2-b254-3888fc537f17",
-          href: "https://developer.lumen.com/library/content/lumen/en-us",
+          href: "https://developer.lumen.com/library",
           alt: "One professional sits at a laptop while another stands next to them with hands on the desk, smiling and talking.",
         },
         {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "API Library",
           desc: "Explore the APIs Lumen offers and how they can help you meet evolving demands.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-enterprise-infographic?Creativeid=2ab3ebbf-49c7-43d2-b254-3888fc537f17",
-          href: "https://developer.lumen.com/library/content/lumen/en-us",
+          href: "https://developer.lumen.com/library",
           alt: "One professional sits at a laptop while another stands next to them with hands on the desk, smiling and talking.",
         },
         {
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "Security Services",
           desc: "Fortify your apps and data with expert-backed integrated cybersecurity solutions.",
           img: "https://assets.lumen.com/is/image/Lumen/dia-sase-bundle-resources-card?Creativeid=4b624977-9450-41ef-b265-ff68cbed1279",
-          href: "https://www.lumen.com/en-us/services/security/content/lumen/en-us",
+          href: "https://www.lumen.com/en-us/services/security",
           alt: "Two coworkers interact at a standing desk with a laptop open in front of them.",
         },
         {
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "Infrastructure Services",
           desc: "Build a tailored, AI-ready foundation that meets your business needs.",
           img: "https://assets.lumen.com/is/image/Lumen/AI-use-case-resource-social-engineering-blog?Creativeid=9a489328-f416-4a10-9742-b9b81b70de94",
-          href: "https://www.lumen.com/en-us/services/infrastructure.html/content/lumen/en-us",
+          href: "https://www.lumen.com/en-us/services/infrastructure",
           alt: "Two coworkers in suits sit next to each other and engage in conversation.",
         },
         {
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alt: "Professionals sit in a line at a light oak desk, each with a laptop and headsets on.",
         },
         {
-          title: "Lumen Cloud Communications (Not in copy doc)",
+          title: "Lumen Cloud Communications",
           desc: "Leverage AI-ready network and unique PSTN access to enable connectivity and security.",
           img: "https://assets.lumen.com/is/image/Lumen/wholesale-support?Creativeid=b2210642-26fd-47fd-a2ad-0fffbb25ff36",
           href: "https://www.lumen.com/en-us/services/lumen-cloud-communications.html/content/lumen/en-us",
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           title: "Private Connectivity Fabric (PCF)",
           desc: "Leverage our future-ready network to meet next-gen data demands.",
-          img: "https://assets.lumen.com/is/image/Lumen/wholesale-centurylink-qc-region?Creativeid=7f36cde7-6723-4b28-8acc-597369e4ac65",
+          img: "https://assets.lumen.com/is/image/Lumen/energy-industry-cards-img-2?Creativeid=ab69a03e-442c-48a5-b077-431d2d52133a",
           href: "https://www.lumen.com/en-us/networking/private-connectivity-fabric.html/content/lumen/en-us",
           alt: "Two coworkers in blue hard hats walk through an industrial-looking building, talking and referencing a tablet.",
         },
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "Investor Relations",
           desc: "Stay informed on stock updates, quarterly results and more.",
           img: "https://assets.lumen.com/is/image/Lumen/midsize-business-resource-card?Creativeid=9c4c6f2d-04e7-4974-b7a9-1778804adae3",
-          href: "https://ir.lumen.com/home/default.aspx/content/lumen/en-us", //Ask Jared about this kind of url
+          href: "https://ir.lumen.com/home/default.aspx", //Ask Jared about this kind of url
           alt: "Two coworkers sit in a trendy office space with paper tablets in hand having a conversation.",
         },
         {
@@ -386,6 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.style.opacity = "0";
       menu.style.pointerEvents = "auto";
 
+      // tweak these values to adjust how low we want the menus to drop
       anime({
         targets: menu,
         opacity: [0, 1],
