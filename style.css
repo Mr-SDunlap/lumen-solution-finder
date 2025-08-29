@@ -72,7 +72,7 @@ body {
 }
 body .sd-wrap header h1 {
   font-size: 48px;
-  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif !important;
   line-height: 50px;
   font-weight: 500;
   color: #000;
@@ -108,8 +108,8 @@ body .sd-wrap header h1 {
   display: grid;
   gap: 8px;
 }
-.sd-field label {
-  font-family: "Gotham medium", "Helvetica Neue", Arial, sans-serif;
+.sd-wrap .sd-field label {
+  font-family: "Gotham medium", "Helvetica Neue", Arial, sans-serif !important;
   font-size: 36px;
   line-height: 40px;
   color: #f95e4a;
@@ -196,7 +196,7 @@ body .sd-wrap header h1 {
 
 .sd-dropdown-menu {
   position: absolute;
-  top: 80%; /* change this to mod the dropdown height*/
+  top: 110%; /* change this to mod the dropdown height*/
   left: 0;
   right: 0;
   background: #fff;
@@ -272,12 +272,15 @@ body .sd-wrap header h1 {
   flex-direction: column;
 }
 
-.sd-card-content a {
-  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 500;
-  color: #007981 !important;
+.sd-wrap .sd-card-content a {
   margin-top: auto;
   align-self: flex-start;
+
+  p {
+    font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: 500;
+    color: #007981 !important;
+  }
 }
 .sd-card-content a:hover > .sd-arrow {
   transform: translateX(8px);
@@ -317,8 +320,8 @@ body .sd-wrap header h1 {
   left: 0;
   transform: translateY(-370%) translateX(360%) rotate(-45deg);
 }
-.sd-card h3 {
-  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif;
+.sd-wrap .sd-results #sd-resultGrid .sd-card h3 {
+  font-family: "Gotham bold", "Helvetica Neue", Arial, sans-serif !important;
   margin: 0;
   font-size: 24px;
   font-weight: 500;
