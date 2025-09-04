@@ -1,6 +1,58 @@
 let openDropdown = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Analytics helpers -------------------------------------------------
+  window.adobeDataLayer = window.adobeDataLayer || [];
+  function pushLinkClick({
+    name = "",
+    type = "other",
+    destination = "",
+    location = "",
+  }) {
+    try {
+      window.adobeDataLayer.push({
+        event: "Link Click",
+        linkDetails: {
+          clickName: name,
+          clickType: type, // "download" | "exit" | "other"
+          clickDestination: destination,
+          clickLocation: location, // e.g., "role dropdown", "goal dropdown", "results"
+        },
+      });
+    } catch (_) {
+      /* no-op */
+    }
+  }
+  function getClickType(href) {
+    if (!href) return "other";
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch {
+      return "other";
+    }
+    if (url.origin !== window.location.origin) return "exit";
+    const dlExt = [
+      "pdf",
+      "zip",
+      "csv",
+      "xlsx",
+      "doc",
+      "docx",
+      "ppt",
+      "pptx",
+      "jpg",
+      "jpeg",
+      "png",
+      "gif",
+      "mp4",
+      "mov",
+      "webm",
+    ];
+    const p = url.pathname.toLowerCase();
+    return dlExt.some((ext) => p.endsWith("." + ext)) ? "download" : "other";
+  }
+  // ----------------------------------------------------------------------
   const ROLE_TO_GOALS = {
     "A business executive": [
       "Learn more about Lumen",
@@ -335,24 +387,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = dropdown.querySelector(".sd-dropdown-menu");
     const alreadyBound = dropdown.dataset.bound === "true";
 
-    // (Re)build menu items every call
+    // Clear out any previously appended <li> items before building new options
     menu.innerHTML = "";
+
     options.forEach((opt) => {
       const li = document.createElement("li");
       li.textContent = opt;
+
+      // (Optional) Add attributes for debug/analytics selectors
+      if (dropdown.dataset.type === "role")
+        li.setAttribute("data-sf-role", opt);
+      if (dropdown.dataset.type === "goal")
+        li.setAttribute("data-sf-goal", opt);
+
       li.addEventListener("click", () => {
         selectedText.textContent = opt;
 
+        // Close logic (idempotent across rebinds)
         if (alreadyBound) {
-          // We're in a rebind call: don't call closeMenu() (TDZ on isOpen).
-          // Use the existing toggle handler to close gracefully.
           if (toggle.classList.contains("open") && !toggle.disabled) {
             toggle.click();
           }
         } else {
-          // First-time bind path: safe to call closeMenu defined below.
           closeMenu();
         }
+
+        // --- Adobe DL: dropdown choice
+        const location =
+          dropdown.dataset.type === "role" ? "role dropdown" : "goal dropdown";
+        pushLinkClick({
+          name: opt,
+          type: "other",
+          destination: "", // dropdown choices have no href
+          location,
+        });
+        // ---
 
         onSelect(opt);
       });
@@ -482,7 +551,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="sd-card-content">
           <h3>${c.title}</h3>
           <p class="sd-card-description">${c.desc || ""}</p>
-          <a href="${c.href || "#"}" target="_blank" rel="noopener">
+          <a href="${
+            c.href || "#"
+          }" target="_blank" rel="noopener" data-sf-result="${c.title}">
             <p class="sd-tertiary-cta">Learn more</p>
             <div class="sd-arrow">
               <span class="sd-arrow-line"></span>
@@ -535,6 +606,23 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedGoal = null;
 
   const resultsSection = document.querySelector(".sd-results"); // to toggle visibility
+
+  // Delegate click tracking for any result card links
+  resultsSection.addEventListener("click", (e) => {
+    const a = e.target.closest("#sd-resultGrid .sd-card a");
+    if (!a) return;
+    const card = a.closest(".sd-card");
+    const title =
+      card?.querySelector("h3")?.textContent.trim() || a.textContent.trim();
+    const href = a.getAttribute("href") || "";
+    pushLinkClick({
+      name: title,
+      type: "exit",
+      destination: href,
+      location: "results",
+    });
+  });
+
   const goalSelectedSpan = () =>
     document.querySelector("#sd-goal-dropdown .sd-selected");
 
