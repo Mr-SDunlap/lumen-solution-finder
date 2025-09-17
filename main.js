@@ -414,11 +414,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // --- Adobe DL: dropdown choice
         const location =
-          dropdown.dataset.type === "role" ? "role dropdown" : "goal dropdown";
+          dropdown.dataset.type === "role"
+            ? "Interactive Asset - Solution Finder - Role dropdown"
+            : "Interactive Asset - Solution Finder - Goal dropdown";
         pushLinkClick({
           name: opt,
           type: "other",
-          destination: "", // dropdown choices have no href
+          destination: "N/A", // dropdown choices have no href
           location,
         });
         // ---
@@ -619,7 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: title,
       type: "exit",
       destination: href,
-      location: "results",
+      location: "Interactive Asset - Solution Finder - Results",
     });
   });
 
