@@ -89,6 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "Explore APIs",
     ],
     "An industry analyst": ["Learn more about Lumen", "Explore Lumen products"],
+    "A technology reseller/consultant": [
+      "Sell Lumen products to customers",
+      "Learn more about Lumen",
+      "Explore Lumen products",
+    ],
     "In another role": ["Learn more about Lumen", "Explore Lumen products"],
   };
 
@@ -327,6 +332,32 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    set12: {
+      name: "Sell products",
+      cards: [
+        {
+          title: "New Channel Partner",
+          desc: "Grow your business with a powerful global network and comprehensive IT solutions.",
+          img: "https://assets.lumen.com/is/image/Lumen/corning-card-image?Creativeid=b006799a-529d-40c7-8439-5eabdbe84120",
+          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html/content/lumen/en-us",
+          alt: "Two female colleagues walking outside with office building in background while discussing ideas.",
+        },
+        {
+          title: "Active Channel Partner",
+          desc: "Make the most of lucrative Lumen Partner Incentives and promotions.",
+          img: "https://assets.lumen.com/is/image/Lumen/resource-video-dynamic-connections?Creativeid=8aa15993-c057-43b8-93d5-2019fd9d6eb0",
+          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html?active-personalized",
+          alt: "A person wearing a suit intently examines information on a tablet",
+        },
+        {
+          title: "Inactive Channel Partner",
+          desc: "Reignite your partnership to leverage world-class marketing support, limitless earning potential and more.",
+          img: "https://assets.lumen.com/is/image/Lumen/resource-featured-infographic?Creativeid=71250ceb-c5b6-4591-9994-9f3060bcc853",
+          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html?dormant",
+          alt: "Five people sit around a small table and talk in a bright office.",
+        },
+      ],
+    },
   };
 
   const SET_ROUTER = {
@@ -368,6 +399,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "Explore APIs": "set3", // Developer APIs
     },
     "An industry analyst": {
+      "Learn more about Lumen": "learnLumen", // Learn about Lumen
+      "Explore Lumen products": "set10", // Product Finder
+    },
+    "A technology reseller/consultant": {
+      "Sell Lumen products to customers": "set12", // Sell products
       "Learn more about Lumen": "learnLumen", // Learn about Lumen
       "Explore Lumen products": "set10", // Product Finder
     },
