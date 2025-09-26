@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     "An industry analyst": ["Learn more about Lumen", "Explore Lumen products"],
     "A technology reseller/consultant": [
-      "Sell Lumen products to customers",
+      "Learn about the Lumen Partner Program",
       "Learn more about Lumen",
       "Explore Lumen products",
     ],
@@ -336,24 +336,24 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Sell products",
       cards: [
         {
-          title: "New Channel Partner",
-          desc: "Grow your business with a powerful global network and comprehensive IT solutions.",
+          title: "Join the Lumen Partner Portal",
+          desc: "Build your future with a powerful technology partner.",
           img: "https://assets.lumen.com/is/image/Lumen/corning-card-image?Creativeid=b006799a-529d-40c7-8439-5eabdbe84120",
-          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html/content/lumen/en-us",
+          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html",
           alt: "Two female colleagues walking outside with office building in background while discussing ideas.",
         },
         {
-          title: "Active Channel Partner",
-          desc: "Make the most of lucrative Lumen Partner Incentives and promotions.",
+          title: "Log into the Partner Portal",
+          desc: "Lumen Partners can tap into limitless earning potential, world-class marketing support, lucrative incentives and more.",
           img: "https://assets.lumen.com/is/image/Lumen/resource-video-dynamic-connections?Creativeid=8aa15993-c057-43b8-93d5-2019fd9d6eb0",
-          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html?active-personalized",
+          href: "https://partners.lumen.com/English",
           alt: "A person wearing a suit intently examines information on a tablet",
         },
         {
-          title: "Inactive Channel Partner",
+          title: "Hear from our customers",
           desc: "Reignite your partnership to leverage world-class marketing support, limitless earning potential and more.",
           img: "https://assets.lumen.com/is/image/Lumen/resource-featured-infographic?Creativeid=71250ceb-c5b6-4591-9994-9f3060bcc853",
-          href: "https://www.lumen.com/en-us/partner/channel-partner-program.html?dormant",
+          href: "https://www.lumen.com/en-us/resources/customer-stories.html?sort=featured",
           alt: "Five people sit around a small table and talk in a bright office.",
         },
       ],
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Explore Lumen products": "set10", // Product Finder
     },
     "A technology reseller/consultant": {
-      "Sell Lumen products to customers": "set12", // Sell products
+      "Learn about the Lumen Partner Program": "set12", // Sell products
       "Learn more about Lumen": "learnLumen", // Learn about Lumen
       "Explore Lumen products": "set10", // Product Finder
     },
