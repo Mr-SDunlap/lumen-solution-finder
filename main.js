@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Hear from our customers",
-          desc: "Reignite your partnership to leverage world-class marketing support, limitless earning potential and more.",
+          desc: "Explore how Lumen helps businesses unleash their digital potential.",
           img: "https://assets.lumen.com/is/image/Lumen/resource-featured-infographic?Creativeid=71250ceb-c5b6-4591-9994-9f3060bcc853",
           href: "https://www.lumen.com/en-us/resources/customer-stories.html?sort=featured",
           alt: "Five people sit around a small table and talk in a bright office.",
